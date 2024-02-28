@@ -4,13 +4,12 @@ import { StyleSheet, Text, View } from 'react-native';
 function Title(){
   return (
       <Text> 
-          Home
+          Calender
       </Text>
   );
 }
-
-export default function HomeLayout() {
-  return <Stack screenOptions={{
-    headerTitle: props =>  <Title/>
-    }}/>;
+export default function CalenderLayout() {
+return <Stack screenOptions={{
+  headerTitle: props =>  <Title/>
+}}/>;
 }

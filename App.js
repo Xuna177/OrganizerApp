@@ -1,14 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import AppLayout from './app/_layout'
+import { NavigationContainer } from '@react-navigation/native'
 
 export default function App() {
   return (
+    <NavigationContainer>
     <View style={styles.container}>
       <Text>Hi!</Text>
       <StatusBar style="auto" />
       <AppLayout> </AppLayout>
     </View>
+    </NavigationContainer>
   );
 }
 

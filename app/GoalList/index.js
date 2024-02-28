@@ -1,19 +1,31 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
-
-export default function Page() {
-  const [enteredGoalText, setEnteredGoalText] = useState('');
+import { router } from 'expo-router';
+import { getData, storeData } from '../../Services/StorageService'
+export default function Page({navigation}) {
   const [goals, setGoals] = useState([]);
 
 function goalInputHandler(enteredText) {
   setEnteredGoalText(enteredText);
 }
 
-function addGoalHandler() {
-  setGoals((currentGoals) => [
-    ...currentGoals,
-    enteredGoalText,]
-  );
+async function getGoals (){
+  const storedGoals = await getData('goalList')
+  setGoals(storedGoals)
+}
+
+useEffect(()=>{
+  //const unsubscribe = navigation.addListener('focus', () => {
+    getGoals()
+    // The screen is focused
+    // Call any action
+  //});
+  //return unsubscribe;
+}, [navigation]) 
+
+
+function toNewTab() {
+  router.push("/Goal")
 }
 
   return (
@@ -23,14 +35,15 @@ function addGoalHandler() {
         style={styles.textInput} 
         placeholder ="Your Goal!" 
         onChangeText={goalInputHandler}/>
+
         <Button 
         title = "Add Goal"
-        onPress={addGoalHandler}
+        onPress={toNewTab}
         />
       </View>
       <Text>Goal List: </Text>
       <View style={styles.goalsContainer}>
-        {goals.map((goal) => <Text key={goal}> {goal} </Text>)}
+        {goals.map((goal, index) => <Text key={index}> {goal} </Text>)}
       </View>
     </View>
   );
