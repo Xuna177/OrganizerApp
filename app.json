@@ -1,6 +1,12 @@
 {
-  "scheme": "myapptabsexporouter",
+  "scheme": "myapptabsexporouter", 
   "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "OrganizerApp"
+      }
+    },
+    "scheme": "myapptabsexporouter", 
     "name": "OrganizerApp",
     "slug": "OrganizerApp",
     "version": "1.0.0",

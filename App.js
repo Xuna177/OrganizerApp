@@ -7,7 +7,7 @@ export default function App() {
   return (
     <NavigationContainer>
     <View style={styles.container}>
-      <Text>Hi!</Text>
+      <Text>Home Screen</Text>
       <StatusBar style="auto" />
       <AppLayout> </AppLayout>
     </View>

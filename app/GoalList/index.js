@@ -10,8 +10,8 @@ function goalInputHandler(enteredText) {
 }
 
 async function getGoals (){
-  const storedGoals = await getData('goalList')
-  setGoals(storedGoals)
+  const storedGoals = await getData('goalList') 
+  setGoals(storedGoals ?? [])
 }
 
 useEffect(()=>{

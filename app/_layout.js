@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 export default function TabsLayout() {
   return (
-    <Stack>
     <Tabs screenOptions={{ headerShown: false }} backBehavior="history">
       <Tabs.Screen
         name="home"
@@ -53,23 +52,16 @@ export default function TabsLayout() {
           href: null
         }}
       />
-      <Tabs.Screen
-        name="Event"
-        options={{
-          tabBarLabel: "Event",
-          title: "Event",
-          href: null
-        }}
-      />
-    </Tabs>
-
-      <Stack.Screen
-          name="modal"
+        <Tabs.Screen
+          name="EventListModal"
           options={{
             // Set the presentation mode to modal for our modal route.
             presentation: 'modal',
+            title: "EventLsitModal",
+            href: null
           }}
         />
-        </Stack>
+    </Tabs>
+
   );
 }

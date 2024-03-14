@@ -38,7 +38,7 @@ useEffect(()=>{
     // Call any action
   //});
   //return unsubscribe;
-}, [navigation]) 
+}, []) 
 
 function toNewTab() {
   router.push("/Event")
@@ -50,6 +50,7 @@ function toNewTab() {
       <Calendar
   onDayPress={day => {
     console.log('selected day', day);
+    router.push({pathname: "/EventListModal", params: {date: day.dateString}});
   }}
   markedDates={
     calenderEvents
@@ -62,7 +63,6 @@ function toNewTab() {
         onPress={toNewTab}
         />
       </View>
-      <Link href="/modal">Present modal</Link>
     </View>
   );
 }
