@@ -10,7 +10,8 @@ function BackButton(){
       }}> 
           <AntDesign name="left" size={32} color="black" onClick={toNewTab}/>
           
-          EventList
+          EventList: test
+          
       </Text>
   );
 }
